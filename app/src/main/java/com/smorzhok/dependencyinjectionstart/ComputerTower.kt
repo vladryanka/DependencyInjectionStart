@@ -1,6 +1,6 @@
 package com.smorzhok.dependencyinjectionstart
 
-class ComputerTower(
+class ComputerTower (
     val storage: Storage,
     val memory: Memory,
     val processor: Processor
