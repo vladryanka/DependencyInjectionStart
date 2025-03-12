@@ -11,10 +11,12 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModel: ExampleViewModel
-    val comp = DaggerApplicationComponent.create()
+    private val component by lazy {
+        DaggerApplicationComponent.builder().context(application).time(System.currentTimeMillis()).build()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        comp.inject(this)
+        component.inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
