@@ -3,8 +3,8 @@ package com.smorzhok.dependencyinjectionstart.presentation
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.smorzhok.dependencyinjectionstart.ExampleApplication
 import com.smorzhok.dependencyinjectionstart.R
-import com.smorzhok.dependencyinjectionstart.di.DaggerApplicationComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: ExampleViewModel
     private val component by lazy {
-        DaggerApplicationComponent.factory().create(application,System.currentTimeMillis())
+        (application as ExampleApplication).component
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
