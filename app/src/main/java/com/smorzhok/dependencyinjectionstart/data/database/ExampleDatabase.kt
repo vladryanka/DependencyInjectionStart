@@ -4,9 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.smorzhok.dependencyinjectionstart.R
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class ExampleDatabase @Inject constructor(private val context: Context,private val time: Long){
     fun method(){
         Log.d(TAG, "ExampleDatabase ${context.getString(R.string.app_name)} ${time}")

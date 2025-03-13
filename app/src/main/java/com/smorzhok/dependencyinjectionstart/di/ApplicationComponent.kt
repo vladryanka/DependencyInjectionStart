@@ -5,9 +5,8 @@ import com.smorzhok.dependencyinjectionstart.data.network.ExampleApiService
 import com.smorzhok.dependencyinjectionstart.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(modules = [DomainModule::class, DataModule::class])
 interface ApplicationComponent {
     fun inject(activity: MainActivity)
