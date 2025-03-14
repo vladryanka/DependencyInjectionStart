@@ -8,7 +8,7 @@ import com.smorzhok.dependencyinjectionstart.ExampleApplication
 import com.smorzhok.dependencyinjectionstart.R
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ExampleViewModelFactory

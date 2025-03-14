@@ -1,17 +1,13 @@
 package com.smorzhok.dependencyinjectionstart.di
 
 import android.content.Context
-import com.smorzhok.dependencyinjectionstart.data.network.ExampleApiService
-import com.smorzhok.dependencyinjectionstart.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 
 @ApplicationScope
-@Component(modules = [DomainModule::class, DataModule::class, ViewModelModule::class])
+@Component(modules = [DomainModule::class, DataModule::class])
 interface ApplicationComponent {
-    fun inject(activity: MainActivity)
-
-    fun getApiService(): ExampleApiService
+    fun activityComponentFactory(): ActivityComponent.Factory
 
     @Component.Factory
     interface ApplicationComponentFactory{
